@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Check-In</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="navbar relative">
+        <div class="logo">
+            <a href="index.html"><h1>Check-In</h1></a>
+        </div>
+        <div class="nav-links hidden md:flex gap-6">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="how-it-works.html">How it Works</a>
+            <a href="about.html" class="active">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <!-- Hamburger Icon -->
+        <button id="nav-toggle" class="md:hidden absolute right-6 top-1/2 -translate-y-1/2 text-white focus:outline-none z-20">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="fixed top-0 right-0 h-full w-2/3 max-w-xs bg-white shadow-lg z-10 flex flex-col items-start pt-24 px-8 space-y-6 transform translate-x-full transition-transform duration-300 md:hidden">
+            <a href="index.html" class="w-full block py-2 text-lg text-[#6B7FFF] font-semibold">Home</a>
+            <a href="features.html" class="w-full block py-2 text-lg text-[#6B7FFF] font-semibold">Features</a>
+            <a href="how-it-works.html" class="w-full block py-2 text-lg text-[#6B7FFF] font-semibold">How it Works</a>
+            <a href="about.html" class="w-full block py-2 text-lg text-[#6B7FFF] font-semibold active">About Us</a>
+            <a href="contact.html" class="w-full block py-2 text-lg text-[#6B7FFF] font-semibold">Contact</a>
+        </div>
+        <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black bg-opacity-30 z-0 hidden md:hidden"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-r from-[#6B7FFF] to-[#4a6bff] text-center flex flex-col items-center justify-center">
+        <h2 class="text-4xl font-bold text-white mb-4 mt-12">About Check-In</h2>
+        <p class="text-xl text-white mb-4">Connecting Communities. Empowering Safety.</p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-12 px-4 bg-white">
+        <div class="max-w-2xl mx-auto text-center">
+            <p class="text-lg text-gray-700">Crime has been rising in Canada, and we wanted to do something about it, hence why we created Check-In. Check-In is on a mission to make neighborhoods safer, more connected, and empowered. We believe in the power of community, the importance of privacy, and the value of local action. Our platform brings people together to share information, support each other, and keep everyone informed—while always respecting your privacy.</p>
+        </div>
+    </section>
+
+    <!-- Pillars Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+            <div class="p-8 bg-white rounded-xl shadow-md flex flex-col items-center">
+                <div class="text-[#6B7FFF] text-4xl mb-4"><i class="fas fa-shield-alt"></i></div>
+                <h3 class="font-bold text-xl mb-2">Community Safety</h3>
+                <p class="text-gray-600">Real-time alerts, live maps, and group chat help keep your neighborhood informed and secure.</p>
+            </div>
+            <div class="p-8 bg-white rounded-xl shadow-md flex flex-col items-center">
+                <div class="text-[#6B7FFF] text-4xl mb-4"><i class="fas fa-user-secret"></i></div>
+                <h3 class="font-bold text-xl mb-2">Privacy First</h3>
+                <p class="text-gray-600">Your data is yours. We prioritize privacy and security in every feature we build.</p>
+            </div>
+            <div class="p-8 bg-white rounded-xl shadow-md flex flex-col items-center">
+                <div class="text-[#6B7FFF] text-4xl mb-4"><i class="fas fa-users"></i></div>
+                <h3 class="font-bold text-xl mb-2">Local Empowerment</h3>
+                <p class="text-gray-600">Empowering local leaders and residents to take action and make a difference in their communities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-12 text-center">
+        <a href="contact.html" class="inline-block bg-[#6B7FFF] text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-[#4a6bff] transition">Contact Us</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: teamatcheckin@gmail.com</p>
+                <p>Phone: 416-786-8163</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://x.com/thecheckin_ca" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/thecheckin.ca/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Check-In. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Hamburger menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
+
+    function openMenu() {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+      mobileBackdrop.classList.remove('hidden');
+    }
+    function closeMenu() {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenu.classList.remove('translate-x-0');
+      mobileBackdrop.classList.add('hidden');
+    }
+    navToggle.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('translate-x-full')) {
+        openMenu();
+      } else {
+        closeMenu();
+      }
+    });
+    mobileBackdrop.addEventListener('click', closeMenu);
+    // Close menu on nav link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+    </script>
+</body>
+</html> 

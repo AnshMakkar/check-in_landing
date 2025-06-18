@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Check-In</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><h1>Check-In</h1></a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="how-it-works.html">How it Works</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <div class="nav-buttons">
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact-page">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p class="contact-subtitle">Have questions? We're here to help.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p>teamatcheckin@gmail.com</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Call Us</h3>
+                        <p>416-786-8163</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-share-alt"></i>
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contact-form" action="https://formspree.io/f/mrbklqll" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                    <div id="thank-you-message" class="hidden text-green-600 text-center mt-6 text-lg font-semibold">
+                        Thank you for reaching out! We'll get back to you soon.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: teamatcheckin@gmail.com</p>
+                <p>Phone: 416-786-8163</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://x.com/thecheckin_ca" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/thecheckin.ca/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Check-In. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("contact-form");
+            const thankYou = document.getElementById("thank-you-message");
+
+            form.addEventListener("submit", function(e) {
+                e.preventDefault();
+
+                const data = new FormData(form);
+
+                fetch(form.action, {
+                    method: "POST",
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        form.reset();
+                        form.style.display = "none";
+                        thankYou.classList.remove("hidden");
+                    } else {
+                        response.json().then(data => {
+                            alert(data.error || "Oops! There was a problem submitting your form.");
+                        });
+                    }
+                }).catch(error => {
+                    alert("Oops! There was a problem submitting your form.");
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
